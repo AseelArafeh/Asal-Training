@@ -54,10 +54,12 @@ c:/Users/Aseel/Desktop/temp.jpg
 .456       float
 -1.1       float
 123.       integer
-
+asala
 aee  uouo
 0000:8a2e:0370:7334
+test
 18759880
+test
 145875
 aha
 aa
