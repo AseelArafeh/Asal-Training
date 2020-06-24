@@ -9,9 +9,9 @@ allRegXe = [RegXe(" 1. Email accounts  : ", "[a-zA-Z0-9]+[\._]?[a-zA-Z0-9]*[@]\w
             RegXe(" 5. Float Numbers", "[+-]?[0-9]*[.][0-9]+"),
             RegXe(" 6. Some Files Extension", ".*[.](cpp|doc|py|jpg|gif|pdf)"),
             RegXe(" 7. IPv6 Addresses", "(([0-9a-fA-F]{4}:){3}[0-9a-fA-F]{4})"),
-            RegXe(" 8. String consist of only vowels", "\b[aeiuo]+\b"),
-            RegXe(" 9. Multiples of Five", "([0-9]*(0|5))"),
-            RegXe("10. Words begins and end with 'a'", "a\w*?a")]
+            RegXe(" 8. String consist of only vowels", "\\b[aeiuo]+\\b"),
+            RegXe(" 9. Multiples of Five", "\\b([0-9]*(0|5))\\b"),
+            RegXe("10. Words begins and end with 'a'", "\\ba\w*?a\\b")]
 
 for currentRegXe in allRegXe:
 
