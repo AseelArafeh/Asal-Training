@@ -23,7 +23,7 @@ class Car:
         self.productionYear = ''.join(random.choices(string.digits, k=4))
         self.fuelType = ''.join(random.choices(string.ascii_uppercase, k=5))
         self.colour = ''.join(random.choices(string.ascii_uppercase, k=5))
-        self.numberOfSeats = ''.join(random.choices(string.digits, k=4))
+        self.numberOfSeats = ''.join(random.choices(string.digits, k=1))
 
 
     def toString(self):

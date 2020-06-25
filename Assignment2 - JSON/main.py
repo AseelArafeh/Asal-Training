@@ -16,10 +16,13 @@ if __name__ == "__main__":
 
     carsList = creatCarList(10)
     
-    jsonFile = open("jsonFile.json", "w+")
+    jsonFile = open("jsonFile.json", "w")
     jsonFormat = json.dumps(carsList)
     jsonFile.write(jsonFormat)
 
+    jsonFile = open("jsonFile.json", "r")
+    jsonFormat = jsonFile.read()
     stringFormat = json.loads(jsonFormat)
+    
     for item in stringFormat:
         print(item)
