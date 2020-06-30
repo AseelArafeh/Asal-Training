@@ -1,7 +1,6 @@
 class XmlElement:
 # name: (string), parent: XmlElement, children (list of XmlElement), attributes (dictionary), text (string).
 
-
     def __init__(self, name, parent=None, children=[], attributes={}, text=""):
         self.name = name
         self.parent = parent
@@ -27,7 +26,6 @@ class XmlElement:
 
     def setName(self, name): 
         self.name = name 
-        # self.name = self.name + name 
 
     def setParent(self, parent): 
         self.name = parent 
@@ -40,6 +38,7 @@ class XmlElement:
     
     def setText(self, text): 
         self.text = text 
+        # self.text += text
 
     def addChild(self, child): 
         self.children.append(child) 
