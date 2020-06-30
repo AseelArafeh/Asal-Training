@@ -5,7 +5,6 @@ import xml.etree.ElementTree as ET
 
 if __name__ == "__main__":
 
-    # USE RE.COMPILE
 
     inputFilePaths = ['test1.xml', 'test2.xml', 'test3.xml']
     outputFilePath = 'output.xml'
@@ -34,4 +33,4 @@ if __name__ == "__main__":
             stop = timeit.default_timer()
             time2 += (stop - start)
 
-        print("myOwnCode Time on " , inputFilePaths[t], " ==> ", time2/testCases) 
+        print("Python Time on " , inputFilePaths[t], " ==> ", time2/testCases) 
