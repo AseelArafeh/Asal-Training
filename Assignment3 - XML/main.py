@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     for t in range(len(inputFilePaths)):
         time1 = 0
-        testCases = 1000
+        testCases = 10000
         for i in range(testCases):
             start = timeit.default_timer()
             currentTree = XmlTree.createFromFile(inputFilePaths[t])

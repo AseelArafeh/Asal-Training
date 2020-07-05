@@ -20,7 +20,7 @@ class XmlTree:
     def getSize(self): 
         return self.size 
 
-    def toString(self):
+    def toString(self): #__str
         print("Root: " + self.root + "\n" + "Size: " + self.size + "\n")
 
 
@@ -28,7 +28,8 @@ class XmlTree:
     def extractTextBetween(tag1, tag2):
         xmlFile.seek(0)
         pattern = tag1 + "([^<]+)" + tag2
-        obj = re.search(pattern, xmlFile.read())
+        prog = re.compile(pattern)
+        obj = prog.search(xmlFile.read())
         if obj.group(1).strip() != "":
             return obj.group(1).strip()
 
@@ -36,7 +37,9 @@ class XmlTree:
     @staticmethod
     def extractAttributes(tag):
         # find attributes within a tag and return them as {} with name dic
-        attributes = re.findall("([^=\s]*)=\"([^=]*)\"", tag) 
+        pattern = "([^=\s]*)=\"([^=]*)\""
+        prog = re.compile(pattern)
+        attributes = prog.findall(tag) 
         dic = {}
         for name, value in attributes:
             dic[name] = value
@@ -52,7 +55,9 @@ class XmlTree:
     def storeAllTags():
         # find all tags in the file and return them as [] with name tags
         xmlFile.seek(0)
-        tags = re.findall("<[^>]*>", xmlFile.read()) 
+        pattern = "<[^>]*>"
+        prog = re.compile(pattern)
+        tags = prog.findall(xmlFile.read()) 
         return tags
 
 
