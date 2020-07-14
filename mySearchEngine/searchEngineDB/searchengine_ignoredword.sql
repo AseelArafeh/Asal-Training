@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `htmltag`
+-- Table structure for table `ignoredword`
 --
 
-DROP TABLE IF EXISTS `htmltag`;
+DROP TABLE IF EXISTS `ignoredword`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `htmltag` (
-  `tagID` int NOT NULL AUTO_INCREMENT,
-  `tagName` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`tagID`),
-  UNIQUE KEY `tagName_UNIQUE` (`tagName`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+CREATE TABLE `ignoredword` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `ignoredWord` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `ignoredWord_UNIQUE` (`ignoredWord`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `htmltag`
+-- Dumping data for table `ignoredword`
 --
 
-LOCK TABLES `htmltag` WRITE;
-/*!40000 ALTER TABLE `htmltag` DISABLE KEYS */;
-INSERT INTO `htmltag` VALUES (2,'h1'),(3,'h2'),(4,'h3'),(1,'title');
-/*!40000 ALTER TABLE `htmltag` ENABLE KEYS */;
+LOCK TABLES `ignoredword` WRITE;
+/*!40000 ALTER TABLE `ignoredword` DISABLE KEYS */;
+INSERT INTO `ignoredword` VALUES (17,'a'),(3,'am'),(18,'an'),(2,'are'),(27,'can'),(28,'could'),(4,'has'),(5,'have'),(9,'he'),(11,'i'),(1,'is'),(10,'it'),(25,'shall'),(8,'she'),(26,'should'),(21,'that'),(19,'the'),(15,'their'),(13,'them'),(14,'there'),(12,'they'),(20,'this'),(22,'those'),(16,'us'),(6,'was'),(7,'were'),(23,'will'),(24,'would');
+/*!40000 ALTER TABLE `ignoredword` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-07-14  5:38:55
+-- Dump completed on 2020-07-14  5:38:56

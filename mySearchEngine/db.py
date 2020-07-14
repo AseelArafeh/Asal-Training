@@ -4,7 +4,6 @@ import mysql.connector as mysql
 class Database:
 
     def __init__(self):
-        
         self.host = environment.host
         self.user = environment.user
         self.password = environment.password
