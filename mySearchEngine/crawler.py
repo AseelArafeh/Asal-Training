@@ -1,6 +1,7 @@
 import requests as req
 from bs4 import BeautifulSoup
 from db import Database
+import logging
 
 class Crawler:
 
@@ -13,7 +14,9 @@ class Crawler:
             soup = BeautifulSoup(resp.text, 'html.parser')
             return soup
         except Exception as exception:
-            print("FAILED REQUEST", str(exception))
+            msg = "FAILED REQUEST: ", str(exception)
+            logging.basicConfig(filename='logFile.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.INFO)
+            logging.info(msg)
             return None
 
     def getPageURLs(self, url, soup):

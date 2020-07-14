@@ -1,5 +1,6 @@
 import environment
 import mysql.connector as mysql
+import logging
 
 class Database:
 
@@ -17,7 +18,9 @@ class Database:
         try:    
             connection = mysql.connect(host = self.host, user = self.user, password = self.password, database = self.database)
         except Exception as exception:
-            print("DATABASE EXCEPTION: ", str(exception))
+            msg = "DATABASE EXCEPTION: " + str(exception)
+            logging.basicConfig(filename='logFile.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.INFO)
+            logging.info(msg)     
         return connection
 
     def executeSelectQuery(self, query):
@@ -30,7 +33,9 @@ class Database:
             rows = cursor.fetchall()
 
         except Exception as exception:
-            print("QUERY EXCEPTION IN: {0} --> {1}".format(query, str(exception)))
+            msg = "QUERY EXCEPTION IN: {0} --> {1}".format(query, str(exception))
+            logging.basicConfig(filename='logFile.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.INFO)
+            logging.info(msg) 
 
         finally:
             cursor.close()
@@ -51,12 +56,16 @@ class Database:
             result = True
 
         except Exception as exception:
-            print("DATABASE EXCEPTION IN: {0} --> {1}".format(query, str(exception)))
+            msg = "DATABASE EXCEPTION IN: {0} --> {1}".format(query, str(exception))
+            logging.basicConfig(filename='logFile.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.INFO)
+            logging.info(msg)
 
             try:
                 connection.rollback()
             except Exception as exception:
-                print("ROLLBACK EXCEPTION IN: {0} --> {1}".format(query, str(exception)))
+                msg = "ROLLBACK EXCEPTION IN: {0} --> {1}".format(query, str(exception))
+                logging.basicConfig(filename='logFile.log', filemode='w',format='%(asctime)s - %(message)s', level=logging.INFO)
+                logging.info(msg)
 
         finally:
             cursor.close()
