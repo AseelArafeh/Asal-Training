@@ -83,7 +83,9 @@ class Crawler:
         ignoredWords = self.getIgnoredWords()
         filteredContent = ""
         contentWords = content.split()
+        #add regEx for azAZ
         for word in contentWords:
+            word = word.lower()
             if word not in ignoredWords:
                 # replace ' with \'  => escape sequence
                 word = word.replace("'", "\\'").lower()
@@ -125,7 +127,8 @@ class Crawler:
                 all = self.getSpecificTag(document, url, tag[1])
                 for a in all:
                     filteredContent = self.filterTagContent(a.text)
-
+                    if filteredContent == "":
+                        continue
                     currentContentID = self.getTagContentID(filteredContent)
                     if (currentContentID == []):
                         if( self.insertTagContent(filteredContent) == True):
