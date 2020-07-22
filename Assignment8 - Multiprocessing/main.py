@@ -22,6 +22,7 @@ if __name__ == '__main__':
         # text.findQuestion()
         # text.findSpecialChar()
 
+
         # (II) Multiprocessing Execution
         procs = []
 
@@ -46,7 +47,7 @@ if __name__ == '__main__':
         for proc in procs:
             proc.join()
 
-        
+    
         stop = timeit.default_timer()
         print("\nExecution time: ", stop - start)
 
